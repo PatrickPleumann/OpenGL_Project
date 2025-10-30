@@ -78,6 +78,8 @@ int main()
 	GLuint VertexBufferObject{};
 	glGenBuffers(1, &VertexBufferObject);
 
+	//eigentlich noch EBO
+
 	GLuint VertexArrayObject{};
 	glGenVertexArrays(1, &VertexArrayObject);
 	glBindVertexArray(VertexArrayObject);
@@ -86,8 +88,8 @@ int main()
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
 	glUseProgram(shaderProgID);
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)0);
 
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)0);
 	glEnableVertexAttribArray(0);
 
 	glClearColor(1.0f, 0.0f, 0.0f, 0.0f); // setzt Farbe, die Buffer annimmt
